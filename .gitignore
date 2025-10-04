@@ -1,0 +1,44 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore node_modules (if using Node.js tooling)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build output
+dist/
+build/
+
+# Ignore OS generated files
+Thumbs.db
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore environment files
+.env
+
+# Ignore compiled files
+*.pyc
+
+# Ignore coverage reports
+coverage/
+
+# Ignore npm debug file
+npm-debug.log*
+
+# Ignore any temp files
+*.swp
+*.swo
+
+# Ignore SASS cache
+.sass-cache/
+
+# Ignore temporary files created by editors
+*~
+
+# Ignore HTML/CSS cache folders
+.cache/
