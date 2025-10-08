@@ -5,23 +5,44 @@
   <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    img {
+    body {
+      font-family: Arial;
+      background: #eef2ff;
+      padding: 40px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    img.logo {
       display: block;
       margin: 0 auto 20px;
     }
-    body { font-family: Arial; background: #eef2ff; padding: 40px; }
-    .form-container { max-width: 400px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
-    button { background: #7a87fa; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #7a87fa;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <img src="logo.png" alt="Google Logo" width="92" height="30">
-    <h1>Login with Gmail</h1>
-    <!-- rest of your content -->
-  </div>
   <div class="form-container">
+    <img src="logo.png" alt="Google Logo" class="logo" width="92" height="30">
     <h2>Login</h2>
     <input type="email" id="email" placeholder="Email">
     <input type="password" id="password" placeholder="Password">
@@ -34,7 +55,6 @@
       const password = document.getElementById('password').value;
 
       if (email && password) {
-        // Simulate sending verification code
         localStorage.setItem('userEmail', email);
         window.location.href = 'verify.html';
       } else {
