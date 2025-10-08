@@ -22,7 +22,7 @@
     function verifyCode() {
       const code = document.getElementById('code').value;
       if (code === "123456") { // Simulated correct code
-        window.location.href = 'dashboard.html';
+        window.location.href = 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fstorage.cloud.google.com%2F&dsh=S621732952%3A1759903417608145&followup=https%3A%2F%2Fstorage.cloud.google.com%2F&ifkv=AfYwgwVRAPEvTHsqotTkD7DIin0LB7hLSCAQ68uq0Cb7TwBFQayICEbvtVSGM39GpwHSewEI9OUtgw&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin';
       } else {
         alert("Invalid verification code.");
       }
