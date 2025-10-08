@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; background: #e0f7fa; padding: 60px; text-align: center; }
+    h2 { color: #333; }
+    p { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>Welcome to Your Dashboard</h2>
+  <p>You are now logged in as <span id="userEmail"></span></p>
+
+  <script>
+    document.getElementById('userEmail').textContent = localStorage.getItem('userEmail') || 'Guest';
+  </script>
+</body>
+</html>
