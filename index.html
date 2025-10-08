@@ -2,77 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login with Gmail</title>
+  <title>Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
     body {
-      background: #7a87fa;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .login-container {
-      background: #fff;
-      width: 350px;
-      margin: 80px auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 40px 30px 30px 30px;
+      font-family: Arial;
       text-align: center;
+      padding: 60px;
+      background: #f0f4ff;
     }
-    h1 {
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-    #g_id_onload, .g_id_signin {
-      margin: 20px 0;
-    }
-    .profile {
-      margin-top: 20px;
-    }
-    .logo {
+    img.logo {
       display: block;
       margin: 0 auto 20px;
+    }
+    h1 {
+      font-size: 32px;
+      color: #333;
+    }
+    a {
+      display: inline-block;
+      margin: 20px;
+      padding: 12px 24px;
+      background: #7a87fa;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <img src="logo.png" alt="Google Logo" class="logo" width="92" height="30">
-    <h1>Login with Gmail</h1>
-
-    <!-- Google Sign-In Button -->
-    <div id="g_id_onload"
-      data-client_id="YOUR_GOOGLE_CLIENT_ID"
-      data-context="signin"
-      data-ux_mode="popup"
-      data-callback="handleCredentialResponse"
-      data-auto_prompt="false">
-    </div>
-    <div class="g_id_signin" data-type="standard" data-shape="rect" data-theme="outline" data-text="signin_with" data-size="large"></div>
-
-    <div class="profile" id="profile"></div>
-  </div>
-
-  <script>
-    function handleCredentialResponse(response) {
-      const data = parseJwt(response.credential);
-      document.getElementById('profile').innerHTML =
-        `<p>Welcome, ${data.name}!</p>
-         <p>Email: ${data.email}</p>
-         <img src="${data.picture}" width="80" alt="Profile Photo">`;
-    }
-
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      return JSON.parse(jsonPayload);
-    }
-  </script>
+  <img src="logo.png" alt="Google Logo" class="logo" width="92" height="30">
+  <h1>Welcome to My WebApp</h1>
+  <p>Secure login with email verification</p>
+  <a href="login.html">Login</a>
 </body>
 </html>
