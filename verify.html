@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; background: #fefefe; padding: 40px; }
+    .form-container { max-width: 400px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #7a87fa; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Enter Verification Code</h2>
+    <input type="text" id="code" placeholder="Enter code">
+    <button onclick="verifyCode()">Verify</button>
+  </div>
+
+  <script>
+    function verifyCode() {
+      const code = document.getElementById('code').value;
+      if (code === "123456") { // Simulated correct code
+        window.location.href = 'dashboard.html';
+      } else {
+        alert("Invalid verification code.");
+      }
+    }
+  </script>
+</body>
+</html>
