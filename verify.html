@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Verify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
     body {
       font-family: Arial;
@@ -54,41 +53,10 @@
       const code = document.getElementById('code').value;
       if (code === "123456") {
         localStorage.setItem('verificationCode', code);
-
-        // Initialize Google Sign-In
-        google.accounts.id.initialize({
-          client_id: "YOUR_GOOGLE_CLIENT_ID",
-          callback: handleCredentialResponse
-        });
-
-        // Show Google Sign-In prompt
-        google.accounts.id.prompt((notification) => {
-          if (notification.isNotDisplayed()) {
-            alert("Google Sign-In could not be displayed.");
-          } else if (notification.isSkippedMoment()) {
-            alert("Google Sign-In was skipped.");
-          }
-        });
+        window.location.href = 'dashboard.html';
       } else {
         alert("Invalid verification code.");
       }
-    }
-
-    function handleCredentialResponse(response) {
-      const data = parseJwt(response.credential);
-      localStorage.setItem('googleName', data.name);
-      localStorage.setItem('googleEmail', data.email);
-      localStorage.setItem('googlePicture', data.picture);
-      window.location.href = 'dashboard.html';
-    }
-
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      return JSON.parse(jsonPayload);
     }
   </script>
 </body>
