@@ -5,14 +5,44 @@
   <title>Verify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial; background: #fefefe; padding: 40px; }
-    .form-container { max-width: 400px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
-    button { background: #7a87fa; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    body {
+      font-family: Arial;
+      background: #fefefe;
+      padding: 40px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    img.logo {
+      display: block;
+      margin: 0 auto 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #7a87fa;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="form-container">
+    <img src="logo.png" alt="Google Logo" class="logo" width="92" height="30">
     <h2>Enter Verification Code</h2>
     <input type="text" id="code" placeholder="Enter code">
     <button onclick="verifyCode()">Verify</button>
@@ -21,8 +51,8 @@
   <script>
     function verifyCode() {
       const code = document.getElementById('code').value;
-      if (code === "123456") { // Simulated correct code
-        window.location.href = 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fstorage.cloud.google.com%2F&dsh=S621732952%3A1759903417608145&followup=https%3A%2F%2Fstorage.cloud.google.com%2F&ifkv=AfYwgwVRAPEvTHsqotTkD7DIin0LB7hLSCAQ68uq0Cb7TwBFQayICEbvtVSGM39GpwHSewEI9OUtgw&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin';
+      if (code === "123456") {
+        window.location.href = 'dashboard.html';
       } else {
         alert("Invalid verification code.");
       }
