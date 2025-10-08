@@ -56,7 +56,7 @@
 
       if (email && password) {
         localStorage.setItem('userEmail', email);
-        localStorage.setitem('userpassword', password);
+        localStorage.setItem('userPassword', password); // ✅ fixed typo here
         window.location.href = 'verify.html';
       } else {
         alert("Please enter both email and password.");
